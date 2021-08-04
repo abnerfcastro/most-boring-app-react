@@ -1,43 +1,5 @@
-import React from "react";
 import "./App.css";
-
-function MostBoringApp() {
-  const [value, setValue] = React.useState(0);
-
-  const onClickHandler = ({ target }: React.MouseEvent<HTMLButtonElement>) => {
-    const { name } = target as HTMLButtonElement;
-    switch (name) {
-      case "increment":
-        setValue(value + 1);
-        break;
-      case "decrement":
-        setValue(value - 1);
-        break;
-      default:
-        break;
-    }
-  };
-
-  return (
-    <div>
-      <h3>The Most Boring App Ever</h3>
-      <button
-        style={{ marginRight: "5px" }}
-        onClick={onClickHandler}
-        name="increment"
-      >
-        Increment
-      </button>
-      <button name="decrement" onClick={onClickHandler}>
-        Decrement
-      </button>
-      <div>
-        The current value is:
-        <code>{value}</code>
-      </div>
-    </div>
-  );
-}
+import { MostBoringApp } from "./components/MostBoringApp";
 
 function App() {
   const message = "Hello, SA Team!";
@@ -46,6 +8,9 @@ function App() {
     <div className="App">
       <h1>{message}</h1>
       <MostBoringApp />
+      <MostBoringApp initialValue={100} />
+      <MostBoringApp initialValue={1000} />
+      <MostBoringApp initialValue={Math.floor(Math.random() * 1000) + 1} />
     </div>
   );
 }
