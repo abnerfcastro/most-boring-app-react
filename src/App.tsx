@@ -1,5 +1,6 @@
 import "./App.css";
 import { MostBoringApp } from "./components/MostBoringApp";
+import { StarWarsWidget } from "./components/StarWarsWidget";
 
 function App() {
   const message = "Hello, SA Team!";
@@ -8,9 +9,8 @@ function App() {
     <div className="App">
       <h1>{message}</h1>
       <MostBoringApp />
-      <MostBoringApp initialValue={100} />
-      <MostBoringApp initialValue={1000} />
-      <MostBoringApp initialValue={Math.floor(Math.random() * 1000) + 1} />
+      <hr />
+      <StarWarsWidget />
     </div>
   );
 }
